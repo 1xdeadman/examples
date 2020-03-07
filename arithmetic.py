@@ -14,7 +14,6 @@ val_1 = "left"
 val_2 = "right"
 
 print(val_1 + val_2)
-
 print((val_1 + " ") * 8)
 
 print("<", val_1 < val_2)
@@ -23,5 +22,3 @@ print("==", val_1 == val_2)
 print(">=", val_1 >= val_2)
 print("<=", val_1 <= val_2)
 print("!=", val_1 != val_2)
-
-#and  or  not

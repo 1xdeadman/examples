@@ -25,5 +25,15 @@ val_1 = None
 print("7:", type(val_1))
 
 
+asd = int()
 asd = int('123')
+sad = float()
+sad = str()
+sad = str(123)
+sad = bool()
+sad = bytes()
 sad = list()
+
+# И так далее
+
+

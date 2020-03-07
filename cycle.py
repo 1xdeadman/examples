@@ -15,6 +15,9 @@ for i in range(1, 10, 3):
     print(i, end=' ')
 print()
 
+for i in range(-10, 10, 1):
+    print(i)
+
 
 val_1 = 1
 while val_1 < 10:
