@@ -1,9 +1,3 @@
-#print("123", "456", 789, sep="|")
-
-print("123", end='\n')
-print("456", end='|')
-print("789")
-
 for i in range(10):
     print(i, end=' ')
 print()
@@ -18,10 +12,10 @@ print()
 for i in range(-10, 10, 1):
     print(i)
 
-
 val_1 = 1
 while val_1 < 10:
     val_1 += 1
+    if val_1 == 2:
+        continue
     str_val_1 = str(val_1)
     print(str_val_1 + ": ", "while") # преобразование числа в строку
-

@@ -1,10 +1,10 @@
 def func_name():
     print('func_name()')
 
-
-def func_2(param_1, param_2):
+def func_2(param_1:int, param_2=123):
     print(param_1)
     print(param_2)
+    return 1, 12, 33, "asdsa"
 
 
 def func_3(param_1):
@@ -17,10 +17,17 @@ def func_4():
     result = 'asdasd'
     return result, 123, "asd"
 
-res = func_3("Михаил")
-print(res)
+def ff(*args):
+    for arg in args:
+        print(arg)
 
-res, res_2, kek = func_4()
-print(res)
-print(res_2)
-print(kek)
+
+def ff_kw(**kwargs):
+    print(kwargs['aza'])
+    for arg in kwargs.items():
+        print(arg)
+
+
+if __name__ == "__main__":
+    ff(1,2,3,5)
+    ff_kw(aza=1,lol=2,kek=3,bup=5)

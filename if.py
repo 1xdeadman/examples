@@ -1,7 +1,6 @@
 val_1 = 1
 val_2 = 2
 
-
 if True:
     print('True')
 if False:
@@ -40,4 +39,6 @@ if val_1 == 1 and val_2 != 2:
 if val_1 == 1 or val_2 != 2:
     print("val_1 == 1 and val_2 != 2")
 
-
+if ((val_1 < 1 or val_1 > 20) and
+   (val_2 == 1 or val_2 != 2)):
+   print("!")

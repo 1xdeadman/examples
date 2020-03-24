@@ -1,4 +1,4 @@
-# типы даных
+# переменные
 
 # int
 val_1 = 123
@@ -24,7 +24,6 @@ print("6:", type(func))
 val_1 = None
 print("7:", type(val_1))
 
-
 asd = int()
 asd = int('123')
 sad = float()
@@ -33,7 +32,3 @@ sad = str(123)
 sad = bool()
 sad = bytes()
 sad = list()
-
-# И так далее
-
-
