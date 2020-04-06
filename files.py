@@ -1,8 +1,8 @@
 file = open("Data/213.txt", "r")
-
-print(file.read())
-line = file.readline()
-lines = file.readlines()
+print(file.read()) # читать весь файл целиком
+print(file.read(2)) # читать 2 символа
+line = file.readline() # считать строку файла (\n)
+lines = file.readlines() # считать весь файл построчно
 file.close()
 
 with open("Data/213.txt", "r") as file:
@@ -22,6 +22,7 @@ for line in file:
 file.close()
 
 
-with open("Data/text.txt", "w") as file:
-    file.write("row1")
+with open("Data/text.txt", "a") as file:
+    file.write("row1\n")
+    file.write("row1\n")
     file.writelines(["row2\n","row3\n"])

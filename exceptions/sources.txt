@@ -1,0 +1,4 @@
+https://docs.python.org/3/tutorial/errors.html
+https://docs.python.org/3/library/exceptions.html
+https://pythonworld.ru/tipy-dannyx-v-python/isklyucheniya-v-python-konstrukciya-try-except-dlya-obrabotki-isklyuchenij.html
+learning python, 5th edition
