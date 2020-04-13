@@ -4,15 +4,6 @@
 # https://habr.com/ru/post/141411/
 import time
 
-def func():
-    print("hello")
-
-def decorator(func):
-    print("before")
-    func()
-    print("after")
-
-'''
 class cls_decorator:
     def __init__(self, func):
         self.calls = 0
@@ -71,3 +62,4 @@ ff(1,2)
 #kk = kek()
 #kk.keko()
 #kk.keko()
+'''
