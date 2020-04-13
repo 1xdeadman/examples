@@ -27,7 +27,14 @@ def ff_kw(**kwargs):
     for arg in kwargs.items():
         print(arg)
 
+def ff_all(*args, **kwargs):
+    for arg in args:
+        print(arg)
+    for arg in kwargs.items():
+        print(arg)
+
 
 if __name__ == "__main__":
-    ff(1,2,3,5)
-    ff_kw(aza=1,lol=2,kek=3,bup=5)
+    #ff(1,2,3,5)
+    #ff_kw(aza=1,lol=2,kek=3,bup=5)
+    ff_all(1,2,3,4, aza=123)

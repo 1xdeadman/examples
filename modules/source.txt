@@ -1,0 +1,5 @@
+learning python, 5th edition, chapter 22
+learning python, 5th edition, chapter 23
+learning python, 5th edition, chapter 24
+https://packaging.python.org/tutorials/packaging-projects/
+https://docs.python.org/3/tutorial/modules.html

@@ -1,3 +1,12 @@
+# base (0-7)
 https://docs.python.org/3/tutorial/classes.html
 https://docs.python.org/3/reference/datamodel.html
 learning python, 5th edition, part 6
+
+# instance/static/class methods (8)
+learning python, 5th edition, chapter 32
+
+#abstract class (9)
+learning python, 5th edition, chapter 29
+https://www.python.org/dev/peps/pep-3119/
+https://docs.python.org/3/library/abc.html
