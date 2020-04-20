@@ -34,7 +34,7 @@ class MyAbstractClass(ABC):
 
 class GammEncrypt(MyAbstractClass):
     def __init__(self):
-        self._key = ''
+        pass
 
     def encrypt(self, filename: str, key, **args) -> bool:
         pass
@@ -56,9 +56,7 @@ class GammEncrypt(MyAbstractClass):
 
 class ReplaceEncrypt(MyAbstractClass):
     def __init__(self):
-        self._key = ''
-        self._public_text = ''
-        self._private_text = ''
+        pass
 
     def encrypt(self, filename: str, key, **args) -> bool:
         pass
