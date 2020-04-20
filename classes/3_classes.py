@@ -2,6 +2,7 @@
 перегрузка операторов
 """
 
+
 class MyClass:
     def __init__(self, value=0):
         self.data = value
@@ -29,7 +30,8 @@ class MyClass:
         return '[MyClass: {0}]'.format(self.data)
 
     def __lt__(self, other):
-        return self.data < other.data 
+        return self.data < other.data
+
 
 rand_1 = MyClass(2)
 rand_2 = MyClass(4)

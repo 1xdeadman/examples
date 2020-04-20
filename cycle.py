@@ -18,4 +18,4 @@ while val_1 < 10:
     if val_1 == 2:
         continue
     str_val_1 = str(val_1)
-    print(str_val_1 + ": ", "while") # преобразование числа в строку
+    print(str_val_1 + ": ", "while")  # преобразование числа в строку

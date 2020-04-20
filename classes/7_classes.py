@@ -1,11 +1,14 @@
-#instance/static/class methods
+# instance/static/class methods
+
 
 class MyClass:
     def __init__(self, x=100):
         if isinstance(x, int):
             self.x = x
+
     def imeth(self, x):
         print("instance:", [self, x])
+
     @staticmethod
     def smeth(x):
         print("static:", [x])
@@ -30,6 +33,7 @@ class MyClass:
         else:
             raise TypeError("x must be str")
 
+
 print("\ninstance")
 instance = MyClass()
 instance.imeth(12)
@@ -40,8 +44,10 @@ MyClass.imeth(instance, 1)
 MyClass.smeth("3")
 MyClass.cmeth("2")
 
+
 class SubClass(MyClass):
     pass
+
 
 print("\nSubClass")
 print("static method:", SubClass.smeth("123"))

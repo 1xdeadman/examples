@@ -2,6 +2,7 @@
 Наследование
 """
 
+
 class Parent:
     def __init__(self):
         self.val = 123
@@ -11,11 +12,13 @@ class Parent:
     def parent_method(self):
         print("my method")
 
+
 class Child(Parent):
     def method(self):
         print(self._prot)
         # print(self._Parent__priv )
         print(self.val)
+
 
 obj1 = Child()
 obj1.method()
@@ -27,6 +30,7 @@ class ChildNext(Parent):
     def __init__(self):
         super().__init__()
         self.kek = 1
+
 
 obj1 = ChildNext()
 print(obj1.val)

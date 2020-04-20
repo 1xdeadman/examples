@@ -2,9 +2,9 @@ class MyClass:
     def __init__(self):
         self.pub_attr = 123
         # скрываем атрибут извне этого класса
-        self.__val = 0  
+        self.__val = 0
         # скрываем атрибут извне этого класса и его потомков
-        self._val = 0  
+        self._val = 0
 
     def set_method(self, new_val):
         if type(new_val) is int:
@@ -19,7 +19,7 @@ class MyClass:
         реализуем свойство для получения значения из объекта
         """
         return self.__val
- 
+
     @val.setter
     def val(self, new_val):
         """

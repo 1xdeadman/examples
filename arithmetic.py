@@ -6,10 +6,10 @@ print(val_1 + val_2)
 print(val_1 - val_2)
 print(val_1 * val_2)
 print(val_1 / val_2)
-print(val_1 // val_2) # целочисленное деление
-print(val_1 ** val_2) # возведение в степень
+print(val_1 // val_2)  # целочисленное деление
+print(val_1 ** val_2)  # возведение в степень
 
-#string
+# string
 val_1 = "left"
 val_2 = "right"
 

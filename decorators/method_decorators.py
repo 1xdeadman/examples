@@ -4,15 +4,18 @@
 # https://habr.com/ru/post/141411/
 import time
 
+
 class cls_decorator:
     def __init__(self, func):
         self.calls = 0
         self.stored_func = func
         print("init")
+
     def __call__(self, *args):
         self.calls += 1
         print("count:", self.calls)
         return self.stored_func(*args)
+
 
 def my_decorator(func):
     def wrapper(*args, **kwargs):
@@ -21,14 +24,15 @@ def my_decorator(func):
         end = time.time()
         print("time:", end - start)
         return res
-
     return wrapper
 
-#@my_decorator
+
+# @my_decorator
 @cls_decorator
 def my_func(kek, lol):
     print("my_func():", kek, lol)
     time.sleep(1.0)
+
 
 # my_func = my_decorator(my_func)
 
@@ -49,6 +53,7 @@ class csl_dec(object):
             return res
         return wrapper
 
+
 class kek:
     @csl_dec.my_dec
     def keko(self):
@@ -59,7 +64,7 @@ class kek:
 def ff(kek, lol):
     print("my_func():", kek, lol)
 ff(1,2)
-#kk = kek()
-#kk.keko()
-#kk.keko()
+# kk = kek()
+# kk.keko()
+# kk.keko()
 '''

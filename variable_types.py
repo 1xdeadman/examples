@@ -17,8 +17,12 @@ print("4:", type(val_1))
 val_1 = [1, 2, 3]
 print("5:", type(val_1))
 # def
+
+
 def func():
     print()
+
+
 print("6:", type(func))
 # None
 val_1 = None
