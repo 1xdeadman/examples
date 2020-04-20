@@ -3,7 +3,11 @@ from abc import ABC, abstractmethod
 
 class MyAbstractClass(ABC):
     @abstractmethod
-    def encrypt(self, text_filename: str, key_filename, **args) -> bool:
+    def encrypt(
+            self,
+            text_filename: str,
+            key_filename: str,
+            **args) -> bool:
         '''
         шифрование файла по ключу
 
@@ -13,7 +17,11 @@ class MyAbstractClass(ABC):
         pass
 
     @abstractmethod
-    def decrypt(self, encrypted_filename: str, key, **args) -> bool:
+    def decrypt(
+            self,
+            encrypted_filename: str,
+            key_filename: str,
+            **args) -> bool:
         '''
         расшифрование файла по ключу
 
@@ -36,10 +44,18 @@ class GammEncrypt(MyAbstractClass):
     def __init__(self):
         pass
 
-    def encrypt(self, filename: str, key, **args) -> bool:
+    def encrypt(
+            self,
+            text_filename: str,
+            key_filename: str,
+            **args) -> bool:
         pass
 
-    def decrypt(self, filename: str, key, **args) -> bool:
+    def decrypt(
+            self,
+            encrypted_filename: str,
+            key_filename: str,
+            **args) -> bool:
         pass
 
     def gen_key(self, **args) -> bool:
@@ -58,10 +74,18 @@ class ReplaceEncrypt(MyAbstractClass):
     def __init__(self):
         pass
 
-    def encrypt(self, filename: str, key, **args) -> bool:
+    def encrypt(
+            self,
+            text_filename: str,
+            key_filename: str,
+            **args) -> bool:
         pass
 
-    def decrypt(self, filename: str, key, **args) -> bool:
+    def decrypt(
+            self,
+            encrypted_filename: str,
+            key_filename: str,
+            **args) -> bool:
         pass
 
     def gen_key(self, **args) -> bool:
