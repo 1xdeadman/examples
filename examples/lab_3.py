@@ -35,7 +35,7 @@ class MyAbstractClass(ABC):
         """генерация ключа"""
         pass
 
-    def _read_text(self):
+    def _read_text(self, text_filename: str) -> bool:
         """общий метод для чтения текстового файла"""
         pass
 
@@ -61,12 +61,18 @@ class GammEncrypt(MyAbstractClass):
     def gen_key(self, **args) -> bool:
         pass
 
-    def _read_encrypt(self):
-        """прочитать защифрованный файл"""
+    def _read_encrypt(self, encrypted_filename: str) -> bool:
+        """прочитать защифрованный файл
+
+        encrypted_filename -- имя файла для чтения
+        """
         pass
 
-    def _read_key(self):
-        """метод для чтения ключа"""
+    def _read_key(self, key_filename: str) -> bool:
+        """метод для чтения ключа
+
+        key_filename -- имя файла для чтения
+        """
         pass
 
 
@@ -91,12 +97,18 @@ class ReplaceEncrypt(MyAbstractClass):
     def gen_key(self, **args) -> bool:
         pass
 
-    def _read_encrypt(self):
-        """прочитать защифрованный файл"""
+    def _read_encrypt(self, encrypted_filename: str) -> bool:
+        """прочитать защифрованный файл
+
+        encrypted_filename -- имя файла для чтения
+        """
         pass
 
-    def _read_key(self):
-        """метод для чтения ключа"""
+    def _read_key(self, key_filename: str) -> bool:
+        """метод для чтения ключа
+
+        key_filename -- имя файла для чтения
+        """
         pass
 
 
