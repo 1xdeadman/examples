@@ -29,4 +29,3 @@ while flag:
             flag = False
         print("Введена неправильная команда!")
 print("exit")
-ы
