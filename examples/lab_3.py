@@ -14,7 +14,8 @@ class MyAbstractClass(ABC):
         text_filename -- имя файла для зашифрования
         key_filename -- имя файла ключа
         '''
-        pass
+        raise Exception("Данный метод переопределяется в дочернем классе.\
+             Его логика уникальная для каждого отдельного класса.")
 
     @abstractmethod
     def decrypt(
@@ -28,16 +29,19 @@ class MyAbstractClass(ABC):
         encrypted_filename -- имя файла для расшифрования
         key_filename -- имя файла ключа
         '''
-        pass
+        raise Exception("Данный метод переопределяется в дочернем классе.\
+             Его логика уникальная для каждого отдельного класса.")
 
     @abstractmethod
     def gen_key(self, **args) -> bool:
         """генерация ключа"""
-        pass
+        raise Exception("Данный метод переопределяется в дочернем классе.\
+             Его логика уникальная для каждого отдельного класса.")
 
     def _read_text(self, text_filename: str) -> bool:
         """общий метод для чтения текстового файла"""
-        pass
+        raise Exception("Данный метод реализуется в этом классе.\
+                         Его логика не меняется для всех классов.")
 
 
 class GammEncrypt(MyAbstractClass):
@@ -112,5 +116,6 @@ class ReplaceEncrypt(MyAbstractClass):
         pass
 
 
+obj_base = MyAbstractClass()
 obj_rep = ReplaceEncrypt()
 obj_gam = GammEncrypt()
