@@ -1,5 +1,5 @@
 str_number = input("input number:")
-"""
+
 try:
     number = int(str_number)
     print("ok!")
@@ -12,8 +12,8 @@ except Exception as err:
 finally:
     print("Завершение блока try...except")
 print("ok!")
-"""
 
+'''
 try:
     number = int("-10")
     if number < 0:
@@ -22,3 +22,4 @@ except ValueError as err:
     print("ValueError:", err)
 except Exception as err:
     print("Exception:", err)
+'''
