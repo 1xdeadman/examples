@@ -1,7 +1,15 @@
-# https://stackoverflow.com/questions/2490334/simple-way-to-encode-a-string-according-to-a-password
-# https://pypi.org/project/pycryptodome/
-# https://www.pycryptodome.org/en/latest/src/api.html
-# https://docs.python.org/3/library/hashlib.html
+"""
+Реализуете в этом модуле механизмы:
+1) шифрования/расшифрования данных
+2) хеширования данных
+3) генерации ключей
+
+https://stackoverflow.com/questions/2490334/simple-way-to-encode-a-string-according-to-a-password
+https://pypi.org/project/pycryptodome/
+https://www.pycryptodome.org/en/latest/src/api.html
+https://docs.python.org/3/library/hashlib.html
+"""
+
 from Crypto.Cipher import AES
 from Crypto import Random
 import hashlib
@@ -84,15 +92,7 @@ def gen_secret_key():
 
 
 if __name__ == "__main__":
-
+    pass
     # print(SHA256.new("1".encode(encoding='utf-8')).hexdigest())
     # или
     # print(hashlib.sha256("1".encode(encoding='utf-8')).hexdigest())
-
-    tt = gen_secret_key()
-    text = " text"
-    ciphertext = encrypt(text.encode(encoding='utf-8'), tt)
-    print("ciphertext:", ciphertext)
-    text = decrypt(ciphertext, tt)
-    str_text = text.decode(encoding='utf-8')
-    print("text:", "'{0}'".format(str_text))
