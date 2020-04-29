@@ -66,7 +66,7 @@ def decrypt(ciphertext: bytes, key: bytes) -> bytes:
     if len(ciphertext) % _LEN_BLOCK_SIZE != 0:
         raise ValueError(r"len(bytes_str) % length != 0")
 
-    ciphertext = _fill_random_bytes(ciphertext, _LEN_BLOCK_SIZE)
+    # ciphertext = _fill_random_bytes(ciphertext, _LEN_BLOCK_SIZE)
 
     obj = AES.new(key, AES.MODE_CBC, _IV456)
     text = obj.decrypt(ciphertext)
