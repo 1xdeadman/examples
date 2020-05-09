@@ -4,7 +4,7 @@
 Вы спокойно можете изменять их, добавлять новые.
 Главное - чтобы модуль работал так, как необходимо вашей программе.
 """
-
+from typing import Union, Optional
 
 def create_new_note(note_name: str, note_data: bytes) -> bool:
     """
@@ -21,10 +21,11 @@ def create_new_note(note_name: str, note_data: bytes) -> bool:
 
         Или реализовать их через исключения.
     """
-    pass
+    raise Exception('not implemented')
+    return False
 
 
-def read_note(note_name: str) -> bytes:
+def read_note(note_name: str) -> Optional[bytes]:
     """
     Получить содержимое заметки
 
@@ -35,7 +36,8 @@ def read_note(note_name: str) -> bytes:
 
         Можно реализовать генерацию исключений для проверок.
     """
-    pass
+    raise Exception('not implemented')
+    return None
 
 
 def update_note(note_name: str, note_data: bytes) -> bool:
@@ -54,7 +56,8 @@ def update_note(note_name: str, note_data: bytes) -> bool:
 
         Или реализовать их через исключения.
     """
-    pass
+    raise Exception('not implemented')
+    return False
 
 
 def delete_note(note_name: str) -> bool:
@@ -71,4 +74,5 @@ def delete_note(note_name: str) -> bool:
 
         Или реализовать их через исключения.
     """
-    pass
+    raise Exception('not implemented')
+    return False

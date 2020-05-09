@@ -6,22 +6,22 @@
 import db
 import notes
 import security
-
+import typing
 
 key = b''
 
 
-def gen_new_key():
+def gen_new_key() -> None:
     global key
     key = security.gen_secret_key()
-    print("ключ сгенерирован: {0}".format(key))
+    print("ключ сгенерирован: ", key)
 
 
-def encrypt_text():
+def encrypt_text() -> None:
     global key
     text = input("Введите шифруемый текст: ")
     ciphertext = security.encrypt(text.encode(encoding='utf-8'), key)
-    print("шифротекст:", "'{0}'".format(ciphertext))
+    print("шифротекст: ", ciphertext, "", sep="'")
 
 
 commands = [
@@ -30,16 +30,16 @@ commands = [
 ]
 
 
-def use_command(command: str):
+def use_command(command: str) -> None:
     global commands
     for com in commands:
         if command in com:
-            com[2]()
+            typing.Callable[com[2]]()
             return
     print("Не найдена команда!")
 
 
-def show_menu():
+def show_menu() -> None:
     print()
     print("выберите команду:")
     for com in commands:

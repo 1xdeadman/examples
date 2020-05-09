@@ -4,6 +4,7 @@
 Вы спокойно можете изменять их, добавлять новые.
 Главное - чтобы модуль работал так, как необходимо вашей программе.
 """
+from typing import Union, List, Tuple
 
 
 def create_new_user_db() -> bool:
@@ -18,7 +19,8 @@ def create_new_user_db() -> bool:
 
         Или реализовать их через исключения.
     """
-    pass
+    raise Exception('not implemented')
+    return False
 
 
 def insert(user: str, password: bytes, user_dir: str, enc_key: bytes) -> bool:
@@ -38,10 +40,11 @@ def insert(user: str, password: bytes, user_dir: str, enc_key: bytes) -> bool:
 
         Или реализовать их через исключения.
     """
-    pass
+    raise Exception('not implemented')
+    return False
 
 
-def select(user: str):
+def select(user: str) -> Union[Tuple[str, bytes, str, bytes], None]:
     """
     Получить информацию о существующем пользователе
 
@@ -52,7 +55,8 @@ def select(user: str):
 
         Можно реализовать генерацию исключений для проверок.
     """
-    pass
+    raise Exception('not implemented')
+    return None
 
 
 def update(user: str, enc_key: bytes) -> bool:
@@ -70,7 +74,8 @@ def update(user: str, enc_key: bytes) -> bool:
 
         Или реализовать их через исключения.
     """
-    pass
+    raise Exception('not implemented')
+    return False
 
 
 def delete(user: str) -> bool:
@@ -87,4 +92,5 @@ def delete(user: str) -> bool:
 
         Или реализовать их через исключения.
     """
-    pass
+    raise Exception('not implemented')
+    return False

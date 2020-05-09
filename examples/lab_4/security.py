@@ -21,7 +21,7 @@ _SALT = b'8_TuDUK9IpJKaM7NWkpSQcMlVh0ZoEmYdeIOjvItOSk='
 _LEN_BLOCK_SIZE = 16
 
 
-def gen_user_secret_key(password: bytes):
+def gen_user_secret_key(password: bytes) -> bytes:
     if isinstance(password, bytes) is False:
         raise TypeError(r"isinstance(password, bytes) is False")
     res = hashlib.pbkdf2_hmac(
@@ -32,7 +32,7 @@ def gen_user_secret_key(password: bytes):
     return res
 
 
-def hash_value(value: bytes):
+def hash_value(value: bytes) -> str:
     if isinstance(value, bytes) is False:
         raise TypeError(r"isinstance(value, bytes) is False")
     m = hashlib.sha256(_SALT + value)
@@ -40,12 +40,12 @@ def hash_value(value: bytes):
     return hashed_pas
 
 
-def _fill_random_bytes(bytes_str: bytes, length: int):
+def _fill_random_bytes(bytes_str: bytes, length: int) -> bytes:
     while len(bytes_str) % length != 0:  # должно быть кратно 16 байт
-        symbol = ' '
+        symbol = bytes()
         if len(bytes_str) > 0:
-            symbol = random.randint(0, len(bytes_str))
-            symbol = bytes_str[symbol: symbol + 1]
+            pos = random.randint(0, len(bytes_str))
+            symbol = bytes_str[pos: pos + 1]
         bytes_str += symbol
     return bytes_str
 
@@ -79,14 +79,13 @@ def decrypt(ciphertext: bytes, key: bytes) -> bytes:
     obj = AES.new(key, AES.MODE_CBC, _IV456)
     text = obj.decrypt(ciphertext)
 
-    size = text[:_LEN_BLOCK_SIZE]
-    size = int.from_bytes(size, byteorder='big')
+    size = int.from_bytes(text[:_LEN_BLOCK_SIZE], byteorder='big')
     text = text[_LEN_BLOCK_SIZE:size + _LEN_BLOCK_SIZE]
 
     return text
 
 
-def gen_secret_key():
+def gen_secret_key() -> bytes:
     # длина ключа AES равна 16, 24, или 32 байтам.
     return Random.new().read(32)
 
