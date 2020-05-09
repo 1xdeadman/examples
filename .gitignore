@@ -4,3 +4,7 @@ test.py
 TestData/
 lesson_4/
 get_points.py
+build/
+dist/
+*.spec
+.mypy_cache/

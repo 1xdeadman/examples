@@ -25,10 +25,10 @@ def gen_user_secret_key(password: bytes):
     if isinstance(password, bytes) is False:
         raise TypeError(r"isinstance(password, bytes) is False")
     res = hashlib.pbkdf2_hmac(
-            'sha256',
-            password,
-            _SALT,
-            100000)
+        'sha256',
+        password,
+        _SALT,
+        100000)
     return res
 
 

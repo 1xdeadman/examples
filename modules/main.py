@@ -10,13 +10,12 @@ if __name__ == "__main__":
     ll.append(11)
     ll.append(12)
     import module_2
-        
+
     print(module_1.__dict__)
     module_1.__dict__['variable_1'] = 88
     print(list(module_1.__dict__.keys()))
 
-    #import my_package_1
-    #my_package_1.sub_module1.kek()
-    #my_package_1.module1.kek()
-    #print(__file__)
-    
+    # import my_package_1
+    # my_package_1.sub_module1.kek()
+    # my_package_1.module1.kek()
+    # print(__file__)

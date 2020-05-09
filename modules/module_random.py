@@ -31,6 +31,7 @@ show("vonmisesvariate:", rnd.vonmisesvariate, mu=10, kappa=60)
 show("paretovariate:", rnd.paretovariate, alpha=10)
 show("weibullvariate:", rnd.weibullvariate, alpha=10, beta=60)
 
+
 def gen_key_1(key_len):
     key = [i for i in range(1, key_len + 1)]
     rnd.shuffle(key)

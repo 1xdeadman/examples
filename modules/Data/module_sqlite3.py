@@ -21,21 +21,25 @@ def create_table():
     # Create table
     global conn
     global c
-    c.execute('''CREATE TABLE users
-                (ID INTEGER PRIMARY KEY AUTOINCREMENT, \
-                    user text NOT NULL UNIQUE, password BLOB, dir text, enc_key BLOB)''')
+    c.execute(
+        '''CREATE TABLE users
+        (ID INTEGER PRIMARY KEY AUTOINCREMENT, \
+        user text NOT NULL UNIQUE, password BLOB, dir text, enc_key BLOB)''')
     conn.commit()
 
 
 def insert(user, password, user_dir, enc_key):
     global conn
     global c
-    c.execute("INSERT INTO users (user, password, dir, enc_key) \
-                        VALUES (?,?,?,?)", (
-                                                user,
-                                                password,
-                                                user_dir,
-                                                enc_key))
+    c.execute(
+        "INSERT INTO users (user, password, dir, enc_key) \
+        VALUES (?,?,?,?)",
+        (
+            user,
+            password,
+            user_dir,
+            enc_key
+        ))
     conn.commit()
 
 
@@ -62,7 +66,7 @@ def update(user, password=None, user_dir=None, enc_key=None):
         if len(req) > 0:
             req += ", "
         req += "enc_key = '" + enc_key + "'"
-        
+
     c.execute("UPDATE users SET {0} WHERE user = '{1}'".format(req, user))
     conn.commit()
 
