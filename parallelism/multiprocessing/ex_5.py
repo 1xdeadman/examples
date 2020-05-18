@@ -1,12 +1,4 @@
 # https://docs.python.org/3/library/multiprocessing.html
-'''
-multiprocessing is a package that supports spawning processes using an
-API similar to the threading module. The multiprocessing package offers
-both local and remote concurrency, effectively side-stepping the Global
-Interpreter Lock by using subprocesses instead of threads. Due to this,
-the multiprocessing module allows the programmer to fully leverage multiple
-processors on a given machine. It runs on both Unix and Windows.
-'''
 import time
 import multiprocessing as mp
 
@@ -18,7 +10,7 @@ def proc_func(my_queue: mp.Queue):
         time.sleep(1)
         # put(obj[, block[, timeout]])
         if i <= 4 and not my_queue.full():
-            my_queue.put(f"{i}: from {mp.current_process().name}")
+            my_queue.put(f"{i}: from {mp.current_process().name}")  # [block[, timeout]]
         if i == 4:
             my_queue.close()
 
@@ -41,9 +33,8 @@ if __name__ == '__main__':
 
     while my_queue:
         try:
-            print("new")
             if not my_queue.empty():
-                print(my_queue.get(timeout=1.0))  # [block[, timeout]]
+                print(my_queue.get(block=False, timeout=0.1))  # [block[, timeout]]
         except Exception as ex:
             print(ex)
 

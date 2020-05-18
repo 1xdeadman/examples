@@ -6,6 +6,7 @@
 """
 from typing import Union, Optional
 
+
 def create_new_note(note_name: str, note_data: bytes) -> bool:
     """
     Создание новой заметки.

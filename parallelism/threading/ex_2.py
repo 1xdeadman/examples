@@ -36,8 +36,8 @@ def l_print_blocking(message: str):
 
 def l_print_nonblocking(message: str):
     global my_locker
+    time.sleep(0.2)
     if my_locker.acquire(blocking=False) is True:
-        time.sleep(0.2)
         print(message)
         my_locker.release()
     else:
@@ -47,8 +47,8 @@ def l_print_nonblocking(message: str):
 
 def l_print_timeout(message: str):
     global my_locker
+    time.sleep(0.2)
     if my_locker.acquire(blocking=True, timeout=0.1) is True:
-        time.sleep(0.2)
         print(message)
 
         my_locker.release()
@@ -61,14 +61,16 @@ def l_print_common_data(message: str):
     global my_locker
     global common_data
     my_locker.acquire()
+    time.sleep(1)
     common_data += ' ' + message
-    print(common_data.x)
+    print(common_data)
     my_locker.release()
 
 
 def l_print_noncommon_data(message: str):
     global my_locker
     global thread_local_data
+    time.sleep(1)
     if 'x' not in thread_local_data.__dict__:
         thread_local_data.x = "non common"
     my_locker.acquire()
@@ -79,9 +81,9 @@ def l_print_noncommon_data(message: str):
 
 
 def thread_func(lol: str):
-    for i in range(10):
-        time.sleep(1)
-        l_print_blocking(f"{i}: {threading.get_ident()}")
+    for i in range(1000):
+        # time.sleep(1)
+        l_print_noncommon_data(f"{i}: {threading.get_ident()}")
 
 
 def create_new_thread(thread_name=None):

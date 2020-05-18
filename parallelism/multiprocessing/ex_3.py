@@ -5,13 +5,16 @@ import time
 
 
 def wait_condition(cv, flag):
+    lambda x, y: x + y
     with cv:
+        print("wait!!")
         cv.wait_for(predicate=lambda: flag.value)
     print("YESYESYES!!!")
 
 
 def notify_condition(cv, flag):
     with cv:
+        print("in progress...")
         time.sleep(1)
         flag.value = True
         print("notify!!")

@@ -24,19 +24,18 @@ if __name__ == '__main__':
     # my_pool.close()
     # with mp.Pool(processes=2, initializer=default_task) as my_pool:
 
-    my_pool = mp.Pool(processes=2, initializer=default_task)
     '''
     # print(my_pool.apply(proc_func, args=(110,)))
     # callback and errorcallback
     async_res = my_pool.apply_async(proc_func, callback=res_callback)
 
-    async_res.wait()
-    print("async_res:", async_res.get())
+    async_res.wait()  # [timeout]
+    print("async_res:", async_res.get())  # [timeout]
     '''
     '''
     # print(my_pool.map(proc_func, iterable=[1, 2, 3]))
     async_res = my_pool.starmap_async(
-        proc_func,
+        proc_func_2d,
         iterable=[[1, 2], [2, 3], [3, 4]],
         callback=res_callback
         )  # errorcallback

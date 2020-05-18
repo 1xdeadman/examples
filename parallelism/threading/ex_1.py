@@ -21,7 +21,6 @@ def show_threads_info():
     for thread in threading.enumerate():
         print("--", thread)
     print()
-    print("stack_size: ", threading.stack_size())
 
 
 def show_cur_thread_info():
@@ -35,22 +34,18 @@ def thread_func(lol: str):
         print(f"{i}: {threading.get_ident()}")
 
 
-def create_new_thread(thread_name=None):
-    new_thread = threading.Thread(
-        target=thread_func,
-        name=thread_name,
-        kwargs={"lol": "asd"}
-    )
-    return new_thread
-
-
 def ex_1():
     print("ex_1")
-    thread_lol = create_new_thread("lol")
+    thread_lol = threading.Thread(
+        target=thread_func,
+        name="lol",
+        kwargs={"lol": "kek"}
+    )
     print(f"thread_lol is started: {thread_lol.is_alive()}")
     thread_lol.start()
     print(f"thread_lol is started: {thread_lol.is_alive()}")
     thread_lol.join()
+    print("exit")
     # or
     # thread_lol.join(5.0)
     # print(f"thread_lol is started: {thread_lol.is_alive()}")

@@ -17,13 +17,14 @@ def is_flag():
 def wait_condition():
     global cv
     global flag
+    print("Wait!!!")
     # cv.acquire()
     # cv.release()
     with cv:
         # while not flag:
         #     cv.wait()
         # or
-        cv.wait_for(predicate=lambda: flag)
+        cv.wait_for(predicate=is_flag)
     print("YESYESYES!!!")
 
 
@@ -34,7 +35,7 @@ def notify_condition():
         time.sleep(1)
         flag = True
         print("notify!!")
-        cv.notify(1)
+        cv.notify(2)
         # cv.notify_all()
 
 
@@ -44,14 +45,20 @@ def ex_3():
         target=wait_condition,
         name="waiter"
     )
+    thread_waiter_2 = threading.Thread(
+        target=wait_condition,
+        name="waiter"
+    )
     thread_notifier = threading.Thread(
         target=notify_condition,
         name="notifier"
     )
     thread_waiter.start()
+    thread_waiter_2.start()
     thread_notifier.start()
 
     thread_waiter.join()
+    thread_waiter_2.join()
     thread_notifier.join()
 
 
