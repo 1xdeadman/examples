@@ -39,7 +39,7 @@ if __name__ == '__main__':
         # # start few tasks
         # print(my_pool.map(proc_func, iterable=[1, 2, 3]))
 
-        # start tasks with few params
+        # # start tasks with few params
         # async_res = my_pool.starmap_async(
         #     proc_func_2d,
         #     iterable=[[1, 2], [2, 3], [3, 4]],
