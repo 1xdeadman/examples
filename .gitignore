@@ -8,3 +8,4 @@ build/
 dist/
 *.spec
 .mypy_cache/
+opencv/
