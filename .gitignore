@@ -9,3 +9,5 @@ dist/
 *.spec
 .mypy_cache/
 opencv/
+Test/
+Test2/
