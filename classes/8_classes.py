@@ -1,4 +1,4 @@
-# abstract nethods
+# abstract methods
 # learning python, 5th edition, chapter 29
 # https://www.python.org/dev/peps/pep-3119/S
 # https://docs.python.org/3/library/abc.html

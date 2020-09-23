@@ -12,3 +12,5 @@ str_row = "asdasd12312312"
 print("isspace:", str_row.isspace())
 print("isnumeric:", str_row.isnumeric())
 print("isalpha:", str_row.isalpha())
+
+val = 123

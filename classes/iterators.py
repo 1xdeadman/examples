@@ -48,13 +48,13 @@ class MyData(Iterator, Iterable):
 class MyClassEvenIndexIterator(Iterator):
     def __init__(self, data):
         self._data = data
-        self._index = -2
+        self._index = -1
 
     def __next__(self):
-        if self._index + 2 == len(self._data):
-            self._index = -2
+        if self._index + 1 == len(self._data):
+            self._index = -1
             raise StopIteration
-        self._index = self._index + 2
+        self._index = self._index + 1
         return self._data[self._index]
 
 

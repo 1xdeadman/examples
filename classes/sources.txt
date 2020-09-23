@@ -3,6 +3,9 @@ https://docs.python.org/3/tutorial/classes.html
 https://docs.python.org/3/reference/datamodel.html
 learning python, 5th edition, part 6
 
+# operators(3)
+https://docs.python.org/3/library/operator.html
+
 # instance/static/class methods (8)
 learning python, 5th edition, chapter 32
 
