@@ -50,5 +50,5 @@ for animal in animals:
     elif isinstance(animal, Cat):
         print("puf:", animal.puf)
     else:
-        print("sound:", animal.sound)
+        print("def sound:", animal.sound)
     print()

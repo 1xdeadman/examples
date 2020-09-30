@@ -6,16 +6,15 @@ class MyException(Exception):
 
 def func(param):
     if type(param) is int:
-        raise MyException("my message")
+        raise MyException("my exception's message")
 
 
 def test():
     try:
-        raise MyException("lolkek")
+        func(123)
     except MyException as ex:
         print(ex.message)
 
 
-print(__name__)
-if __name__ == "__main__":
-    test()
+print("hello world")
+test()
