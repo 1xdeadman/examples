@@ -65,6 +65,7 @@ def l_print_common_data(message: str):
     common_data += ' ' + message
     print(common_data)
     my_locker.release()
+    time.sleep(0.01)
 
 
 def l_print_noncommon_data(message: str):
@@ -73,23 +74,43 @@ def l_print_noncommon_data(message: str):
     time.sleep(1)
     if 'x' not in thread_local_data.__dict__:
         thread_local_data.x = "non common"
-    my_locker.acquire()
     thread_local_data.x += ' ' + message
     local_var = 42
+    my_locker.acquire()
     print(thread_local_data.x)
     my_locker.release()
 
 
-def thread_func(lol: str):
-    for i in range(1000):
+def r_print_common_data(message: str):
+    # global my_locker
+    global my_rec_locker
+    global common_data
+
+    my_rec_locker.acquire()
+
+    time.sleep(1)
+    common_data += ' ' + message
+    print(common_data)
+
+    my_rec_locker.acquire()
+    print("internal lock!")
+    my_rec_locker.release()
+
+    my_rec_locker.release()
+    time.sleep(0.01)
+
+
+def thread_func(func, iter_count, lol: str):
+    for i in range(iter_count):
         # time.sleep(1)
-        l_print_noncommon_data(f"{i}: {threading.get_ident()}")
+        func(f"{i}: {threading.get_ident()}")
 
 
-def create_new_thread(thread_name=None):
+def create_new_thread(func, count, thread_name=None):
     new_thread = threading.Thread(
         target=thread_func,
         name=thread_name,
+        args=(func, count),
         kwargs={"lol": "asd"}
     )
     return new_thread
@@ -98,8 +119,8 @@ def create_new_thread(thread_name=None):
 def ex_2():
     print("ex_2")
     # show_cur_thread_info()
-    thread_lol = create_new_thread("lol")
-    thread_kek = create_new_thread("kek")
+    thread_lol = create_new_thread(r_print_common_data, 10, "lol")
+    thread_kek = create_new_thread(r_print_common_data, 10, "kek")
     print(f"thread_lol is started: {thread_lol.is_alive()}")
     thread_lol.start()
     thread_kek.start()

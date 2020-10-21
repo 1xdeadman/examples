@@ -1,6 +1,5 @@
 import multiprocessing as mp
 import time
-import os
 
 
 def proc_func(kek=None, lol=None):
@@ -29,16 +28,23 @@ if __name__ == '__main__':
 
         # # single task
         # print(my_pool.apply(proc_func, args=(110,)))
+        # print(my_pool.apply(proc_func, args=(111,)))
 
-        # # start async single task
-        # # use callback and errorcallback
+        # start async single task
+        # use callback and errorcallback
         # async_res = my_pool.apply_async(proc_func, callback=res_callback)
-        # # async_res.wait()  # [timeout]
+        # async_res = my_pool.apply_async(proc_func, callback=res_callback)
+        # async_res = my_pool.apply_async(proc_func, callback=res_callback)
+        # async_res.wait()  # [timeout]
         # print("async_res:", async_res.get())  # [timeout]
 
         # start few tasks
-        print(my_pool.map(proc_func, iterable=[1, 2, 3]))
-
+        # print(my_pool.map(proc_func, iterable=[1, 2, 3]))
+        async_res = my_pool.map_async(
+            proc_func,
+            iterable=[1, 2, 3],
+            callback=res_callback)
+        async_res.wait()
         # # start tasks with few params
         # async_res = my_pool.starmap_async(
         #     proc_func_2d,

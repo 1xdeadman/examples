@@ -29,7 +29,7 @@ def proc_func():
     else:
         command = ""
     for i in range(10):
-        time.sleep(1)  
+        time.sleep(1)
         print(f'{i}: {command}: {mp.current_process().name}')
 
 
@@ -41,4 +41,7 @@ if __name__ == '__main__':
     proc_func()
 
     new_process.join()
+    print(new_process.is_alive())
+    print(new_process.pid)
+    new_process.terminate()
     print(f"{new_process.name} finished")

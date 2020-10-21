@@ -15,20 +15,23 @@ print("lol will be with proccess")
 
 
 def show_threads_info():
-    print(f"active threads: {threading.active_count()}")
-    print(f"main thread: {threading.main_thread()}")
-    print("threads list: ")
+    print("threads_info:")
+    print(f"-active threads: {threading.active_count()}")
+    print(f"-main thread: {threading.main_thread()}")
+    print("-threads list: ")
     for thread in threading.enumerate():
         print("--", thread)
     print()
 
 
 def show_cur_thread_info():
-    print(f"current_thread: {threading.current_thread()}")
-    print(f"cur_thread_id: {threading.get_ident()}")
+    print("cur_thread_info:")
+    print(f"-current_thread: {threading.current_thread()}")
+    print(f"-cur_thread_id: {threading.get_ident()}")
 
 
 def thread_func(lol: str):
+    show_cur_thread_info()
     for i in range(10):
         time.sleep(1)
         print(f"{i}: {threading.get_ident()}")
@@ -43,8 +46,11 @@ def ex_1():
     )
     print(f"thread_lol is started: {thread_lol.is_alive()}")
     thread_lol.start()
+    show_threads_info()
+    time.sleep(0.5)
     print(f"thread_lol is started: {thread_lol.is_alive()}")
     thread_lol.join()
+    print(f"thread_lol is started: {thread_lol.is_alive()}")
     print("exit")
     # or
     # thread_lol.join(5.0)

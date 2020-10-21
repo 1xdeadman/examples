@@ -11,7 +11,7 @@ def proc_func(locker):
 
 
 if __name__ == '__main__':
-    mp.freeze_support()
+    # mp.freeze_support()
     my_locker = mp.Lock()
     # my_rec_locker = mp.RLock()
     new_process = mp.Process(

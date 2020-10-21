@@ -1,6 +1,8 @@
 # https://docs.python.org/3/library/multiprocessing.html
 import time
 import multiprocessing as mp
+import queue
+
 
 print("lol will be with proccess")
 
@@ -8,15 +10,24 @@ print("lol will be with proccess")
 def proc_func(my_queue: mp.Queue):
     for i in range(10):
         time.sleep(1)
-        # put(obj[, block[, timeout]])
-        if i <= 4 and not my_queue.full():
-            my_queue.put(f"{i}: from {mp.current_process().name}")  # [block[, timeout]]
+        try:
+            # put(obj[, block[, timeout]])
+            try:
+                my_queue.put(f"{i}: from {mp.current_process().name}", timeout=0.1)  # [block[, timeout]]
+            except queue.Full:
+                print('Queue is full')
+            # if i <= 4 and not my_queue.full():
+            #     my_queue.put(f"{i}: from {mp.current_process().name}", timeout=0.1)  # [block[, timeout]]
+        except ValueError:
+            print('Queue is closed')
+            break
         if i == 4:
+            my_queue.put("CLOSED!")
             my_queue.close()
 
 
 if __name__ == '__main__':
-    my_queue = mp.Queue(maxsize=100)
+    my_queue = mp.Queue(maxsize=30)
     prod_1 = mp.Process(
         target=proc_func,
         name="prod 1",
@@ -27,17 +38,24 @@ if __name__ == '__main__':
         name="prod 2",
         args=(my_queue, )
     )
-
     prod_1.start()
     prod_2.start()
-
+    closed_count = 0
     while my_queue:
         try:
             if not my_queue.empty():
-                print(my_queue.get(block=False, timeout=0.1))  # [block[, timeout]]
+                text = my_queue.get(block=False, timeout=0.1)
+                print(text)  # [block[, timeout]]
+                if text == "CLOSED!":
+                    closed_count += 1
+                if closed_count == 2:
+                    print('END')
+                    break
+            else:
+                time.sleep(1)
+                print('--:')
         except Exception as ex:
             print(ex)
-
     prod_1.join()
     prod_2.join()
     print(f"{prod_1.name} finished")
