@@ -34,7 +34,7 @@ def proc_func():
 
 
 if __name__ == '__main__':
-    # mp.freeze_support()
+    mp.freeze_support()
     new_process = mp.Process(target=proc_func, name="new_process")
     new_process.start()
     show_proc_info()

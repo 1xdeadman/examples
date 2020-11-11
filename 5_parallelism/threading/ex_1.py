@@ -20,7 +20,7 @@ def show_threads_info():
     print(f"-main thread: {threading.main_thread()}")
     print("-threads list: ")
     for thread in threading.enumerate():
-        print("--", thread)
+        print("--", thread, thread.name)
     print()
 
 
@@ -41,13 +41,14 @@ def ex_1():
     print("ex_1")
     thread_lol = threading.Thread(
         target=thread_func,
-        name="lol",
+        name="name",
         kwargs={"lol": "kek"}
     )
     print(f"thread_lol is started: {thread_lol.is_alive()}")
     thread_lol.start()
-    show_threads_info()
     time.sleep(0.5)
+    show_threads_info()
+    time.sleep(2)
     print(f"thread_lol is started: {thread_lol.is_alive()}")
     thread_lol.join()
     print(f"thread_lol is started: {thread_lol.is_alive()}")

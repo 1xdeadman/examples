@@ -6,13 +6,15 @@ import time
 def proc_func(locker):
     time.sleep(0.1)
     for i in range(1000):
-        with locker:
+        if my_locker.acquire(timeout=1):
             print(f'{i}: {mp.current_process().name}')
+            my_locker.release()
 
 
 if __name__ == '__main__':
     # mp.freeze_support()
     my_locker = mp.Lock()
+
     # my_rec_locker = mp.RLock()
     new_process = mp.Process(
         target=proc_func,

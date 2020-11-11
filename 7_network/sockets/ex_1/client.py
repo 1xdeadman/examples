@@ -8,3 +8,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
     sock.send(b'my first try')
     print(sock.recv(1024))
 print('OK')
+# sock.shutdown(socket.SHUT_RDWR)
