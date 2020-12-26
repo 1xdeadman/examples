@@ -1,4 +1,3 @@
-print("hello")
 flag = True
 while flag:
     val_1 = int(input("input val_1:"))
