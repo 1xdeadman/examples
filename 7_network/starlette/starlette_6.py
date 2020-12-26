@@ -2,6 +2,7 @@ from starlette.applications import Starlette
 from starlette.responses import PlainTextResponse, JSONResponse, HTMLResponse
 from starlette.routing import Route, Mount
 import starlette.middleware as middleware
+from starlette.middleware.base import BaseHTTPMiddleware
 
 
 async def homepage(request):
@@ -57,12 +58,11 @@ async def server_error(request, exc):
     return HTMLResponse(content=HTML_500_PAGE, status_code=exc.status_code)
 
 
-
 class my_middleware(BaseHTTPMiddleware):
     async def dispatch(self, req, call_next):
         response = await call_next(req)
         response.headers['my_header'] = 'my_middleware'
-
+        return response
 
 
 exception_handlers = {
