@@ -22,9 +22,9 @@ def wait_condition():
     # cv.release()
     with cv:
         # while not flag:
-        #     cv.wait()
+        #     cv.wait()  # timeout
         # or
-        cv.wait_for(predicate=is_flag)
+        cv.wait_for(predicate=is_flag)  # timeout
     print("YESYESYES!!!")
 
 
@@ -32,7 +32,7 @@ def notify_condition():
     global cv
     global flag
     with cv:
-        time.sleep(1)
+        time.sleep(2)
         flag = True
         print("notify!!")
         cv.notify(2)

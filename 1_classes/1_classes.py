@@ -35,7 +35,7 @@ class ConstructionCls:
 def easy():
     rand_name_1 = ConstructionCls()
     print("kek")
-    print(rand_name_1.random_attr_1)
+    # print(rand_name_1.random_attr_1)
 
 
 def normal():

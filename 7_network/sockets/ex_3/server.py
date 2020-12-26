@@ -1,7 +1,8 @@
 import socket
 import threading
 
-def handle_client(conn:socket.socket):
+
+def handle_client(conn: socket.socket):
     with conn:
         # conn.settimeout(1.0)
         data = bytes()
@@ -12,7 +13,7 @@ def handle_client(conn:socket.socket):
                     break
                 print(data)
                 conn.sendall(data)
-            except Exception as ex:
+            except Exception:
                 print('ex')
                 break
         print("data: ", data)
@@ -27,8 +28,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
     while True:
         try:
             client, addr = server.accept()
-            print("[*] Accepted connection from: {0}:{1}".format(addr[0],addr[1]))
-            # spin up our client thread to handle incoming data
-            threading.Thread(target=handle_client,args=(client,)).start()
+            print(f"[*] Accepted connection from: {addr[0]}:{addr[1]}")
+            threading.Thread(target=handle_client, args=(client,)).start()
         except Exception as ex:
             print(ex)

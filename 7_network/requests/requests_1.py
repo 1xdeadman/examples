@@ -14,6 +14,7 @@ def ex_1():
     if input("show text?(Y/N)").lower() == "y":
         print(r.text)
 
+
 def ex_2():
     r = requests.get('http://localhost:8000/')
     print(r.status_code)
@@ -23,6 +24,7 @@ def ex_2():
         print(r.headers)
     if input("show text?(Y/N)").lower() == "y":
         print(r.text)
+
 
 def ex_3():
     token = b''
@@ -40,5 +42,7 @@ def ex_3():
         print(r.headers)
     if input("show text?(Y/N)").lower() == "y":
         print(r.text)
+
+
 if __name__ == "__main__":
-    ex_3()
+    ex_1()
