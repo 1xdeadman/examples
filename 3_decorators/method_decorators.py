@@ -11,10 +11,10 @@ class cls_decorator:
         self.stored_func = func
         print("init")
 
-    def __call__(self, *args):
+    def __call__(self, *args, **kwargs):
         self.calls += 1
         print("count:", self.calls)
-        return self.stored_func(*args)
+        return self.stored_func(*args, **kwargs)
 
 
 def my_decorator(func):

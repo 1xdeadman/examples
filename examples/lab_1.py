@@ -1,5 +1,5 @@
-print("hello")
 flag = True
+
 while flag:
     val_1 = int(input("input val_1:"))
     val_2 = int(input("input val_1:"))
