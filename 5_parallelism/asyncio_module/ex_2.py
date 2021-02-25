@@ -3,11 +3,12 @@
 # https://docs.python.org/3/library/asyncio-api-index.html
 import asyncio
 import time
+import threading as thr
 
 
 async def my_checker():
-    for i in range(10):
-        await asyncio.sleep(1)
+    for i in range(5):
+        await asyncio.sleep(0.5)
         print("all_tasks:", len(asyncio.all_tasks()))
         # for task in asyncio.all_tasks():
         #    print("--", task)
@@ -15,14 +16,14 @@ async def my_checker():
 
 
 async def my_sub_func(row: str):
-    for i in range(10):
+    for i in range(5):
         await asyncio.sleep(0.3)
-        # print(row+str(i))
     print("stop")
     return True
 
 
 async def my_func(row):
+    print(thr.current_thread().getName())
     data = await my_sub_func(row)
     return data
 
@@ -34,17 +35,19 @@ async def main():
 
     print(f"started at {time.strftime('%X')}")
 
-    # Wait until both tasks are completed (should take
-    # around 2 seconds.)
-    print("done:", task1.done())
+    print("done1:", task1.done())
+    print("done2:", task2.done())
+    await asyncio.sleep(0.3)
+    task2.cancel("azaza")
     await task1
-    await task2
     await task_checker
-    print("done:", task1.done())
-    print("cancelled:", task1.done())
-    print("cancelled:", task1.done())
-    print("result:", task1.result())
-
+    print("cancelled1:", task1.cancelled())
+    print("result1:", task1.result())
+    try:
+        await task2
+        print("result2:", task2.result())
+    except asyncio.CancelledError as ex:
+        print("cancelled2:", task2.cancelled())
     print(f"finished at {time.strftime('%X')}")
 
 
