@@ -1,3 +1,5 @@
+# https://docs.python.org/3/reference/datamodel.html, разделы 3.1, 3.2
+# https://metanit.com/python/tutorial/2.2.php
 """
 комментарии - текстовое описание внутри исходных файлов,
 которые не выполняются интерпретатором,

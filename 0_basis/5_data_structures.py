@@ -1,4 +1,9 @@
-# https://docs.python.org/3/reference/datamodel.html
+# https://docs.python.org/3/library/stdtypes.html#bytes
+# https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
+# https://docs.python.org/3/library/stdtypes.html#binary-sequence-types-bytes-bytearray-memoryview
+# https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
+# https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+
 # list
 
 list0 = []
