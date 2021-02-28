@@ -1,5 +1,6 @@
-var_1 = 10
 '''
+https://docs.python.org/3/tutorial/controlflow.html#if-statements
+https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
 https://pythonworld.ru/osnovy/instrukciya-if-elif-else-proverka-istinnosti-trexmestnoe-vyrazhenie-ifelse.html
 условные конструкции предназначены для разветвления логики кода.
 Например, необходимо вывести в консоль сообщение "Привет", но только
@@ -25,7 +26,7 @@ if <условие>:
 <code_2>
 
 В нашем примере необходимо написать следующий блок if:'''
-
+var_1 = 10
 if var_1 == 10:
     print("Привет")
 '''

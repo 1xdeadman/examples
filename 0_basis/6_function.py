@@ -1,7 +1,13 @@
 # learning python, 5th edition, chapter 16
+# https://docs.python.org/3/tutorial/controlflow.html#defining-functions
+# https://docs.python.org/3/tutorial/controlflow.html#function-examples
+# https://docs.python.org/3/tutorial/controlflow.html#function-annotations
+# https://docs.python.org/3/reference/compound_stmts.html#function-definitions
+# https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions
 # https://docs.python.org/3/reference/simple_stmts.html#the-nonlocal-statement
 # https://docs.python.org/3/reference/simple_stmts.html#the-global-statement
 # https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
+# https://pythonworld.ru/tipy-dannyx-v-python/vse-o-funkciyax-i-ix-argumentax.html
 
 
 def func_1(elem: int) -> int:

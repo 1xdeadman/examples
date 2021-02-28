@@ -1,4 +1,7 @@
 # https://docs.python.org/3/reference/datamodel.html, разделы 3.1, 3.2
+# https://docs.python.org/3/reference/lexical_analysis.html
+# https://docs.python.org/3/reference/lexical_analysis.html#literals
+# https://docs.python.org/3/tutorial/controlflow.html#pass-statements
 # https://metanit.com/python/tutorial/2.2.php
 """
 комментарии - текстовое описание внутри исходных файлов,

@@ -10,7 +10,7 @@
 # https://pythonworld.ru/tipy-dannyx-v-python/kortezhi-tuple.html
 # https://pythonworld.ru/tipy-dannyx-v-python/mnozhestva-set-i-frozenset.html
 # https://pythonworld.ru/tipy-dannyx-v-python/slovari-dict-funkcii-i-metody-slovarej.html
-
+# https://pythonworld.ru/tipy-dannyx-v-python/bajty-bytes-i-bytearray.html
 
 # list
 
@@ -177,3 +177,36 @@ print(set0)
 set0.add(2222)
 print(set0)
 
+# bytearray and bytes
+
+byte_array1 = bytearray([1, 2, 3, 4])
+print('byte_array1', byte_array1)
+byte_array2 = bytearray(10)
+print('byte_array2', byte_array2)
+byte_array3 = bytearray('text', encoding='utf-8')
+print('byte_array3', byte_array3)
+
+byte_array1.insert(1, 10)
+tmp_byte_array = byte_array1.copy()
+print('insert(1, 10):', byte_array1)
+print('hex():', byte_array1.hex())
+print('count(1):', byte_array1.count(1))
+print('byte_array3.decode:', byte_array3.decode(encoding='utf-8'))
+byte_array1.append(2)
+print('append(2):', byte_array1)
+print('pop:', byte_array1.pop())
+tmp_byte_array.clear()
+print('clear:', tmp_byte_array)
+
+byte_array1.remove(1)
+print('remove(1):', byte_array1)
+print('index(2):', byte_array1.index(2))
+byte_array1.extend(byte_array3)
+print('extend:', byte_array1)
+byte_array1.reverse()
+print('reverse:', byte_array1)
+
+print(byte_array1[0])
+print(byte_array1)
+byte_array1[2] = 55
+print(byte_array1)
