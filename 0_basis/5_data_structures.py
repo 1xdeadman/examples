@@ -3,6 +3,14 @@
 # https://docs.python.org/3/library/stdtypes.html#binary-sequence-types-bytes-bytearray-memoryview
 # https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 # https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+# https://docs.python.org/3/reference/simple_stmts.html#the-del-statement
+
+
+# https://pythonworld.ru/tipy-dannyx-v-python/spiski-list-funkcii-i-metody-spiskov.html
+# https://pythonworld.ru/tipy-dannyx-v-python/kortezhi-tuple.html
+# https://pythonworld.ru/tipy-dannyx-v-python/mnozhestva-set-i-frozenset.html
+# https://pythonworld.ru/tipy-dannyx-v-python/slovari-dict-funkcii-i-metody-slovarej.html
+
 
 # list
 
@@ -138,12 +146,34 @@ tuple1 = tuple()
 tuple1 = ()
 tuple0 = (0, 1, [1, 2, 3], "123123", 4)
 print(tuple0.count(0))
-tuple0.index(10)
+tuple0.index(1)
 len(tuple0[2])
 
-list0 = [1, 2, 3, 5, 5, 33, 33]
 # set
+list0 = [1, 2, 3, 5, 5, 33, 33]
 set0 = set(list0)
 list0 = list(set0)
 set1 = {1, 2, 3, 4, 5, 1, 1}
+print("list0:", list0)
+print("set0:", set0)
+print("set1:", set1)
+
+print(set1.issubset(set0))
+print(set0.union(set1))
+print(set0.difference(set1))
+print(set0.intersection(set1))
+set0.update(set1)
 print(set0)
+
+set0.remove(33)
+print(set0)
+tmp_set = set0.copy()
+print(tmp_set)
+tmp_set.clear()
+print(tmp_set)
+print(set0)
+print(set0.pop())
+print(set0)
+set0.add(2222)
+print(set0)
+
