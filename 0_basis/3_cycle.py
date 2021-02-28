@@ -3,7 +3,7 @@ https://pythonworld.ru/osnovy/cikly-for-i-while-operatory-break-i-continue-volsh
 Циклы предназначены для выполнения повторяющихся
 последовательностей команд.
 """
-
+# циклы for
 for i in range(10):
     print(i, end=' ')
 print()
@@ -18,6 +18,14 @@ print()
 for i in range(-10, 10, 1):
     print(i)
 
+for i in range(10):
+    print(i, end=' ')
+    break
+else:
+    print('without break')
+
+
+# циклы while
 val_1 = 1
 while val_1 < 10:
     val_1 += 1
@@ -30,9 +38,3 @@ for i in range(10):
     print(i, end=' ')
     break
 
-
-for i in range(10):
-    print(i, end=' ')
-    break
-else:
-    print('without break')
