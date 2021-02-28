@@ -1,4 +1,4 @@
-# основы арифметические операций
+# основные арифметические операций
 # https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 # https://metanit.com/python/tutorial/2.3.php
 
@@ -43,6 +43,8 @@ val_3 //= 1
 val_3 **= 1
 val_3 %= 1
 
+
+# операции сравнения
 print(val_1, "<", val_2, "=", val_1 < val_2)
 print(val_1, ">", val_2, "=",  val_1 > val_2)
 print(val_1, "==", val_2, "=", val_1 == val_2)
