@@ -1,5 +1,7 @@
 """
-https://pythonworld.ru/osnovy/cikly-for-i-while-operatory-break-i-continue-volshebnoe-slovo-else.html
+ https://pythonworld.ru/osnovy/cikly-for-i-while-operatory-break-i-continue-volshebnoe-slovo-else.html
+ https://docs.python.org/3/reference/simple_stmts.html#the-break-statement
+ https://docs.python.org/3/reference/simple_stmts.html#the-continue-statement
 Циклы предназначены для выполнения повторяющихся
 последовательностей команд.
 """

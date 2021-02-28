@@ -1,7 +1,7 @@
 # основные арифметические операций
 # https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 # https://metanit.com/python/tutorial/2.3.php
-
+# https://metanit.com/python/tutorial/2.5.php
 
 # основные арифметические операци над числами (int/float)
 print("Числа")

@@ -1,7 +1,8 @@
 """
 https://docs.python.org/3/library/stdtypes.html
-https://pythonworld.ru/tipy-dannyx-v-python/stroki-funkcii-i-metody-strok.html
 https://pythonworld.ru/tipy-dannyx-v-python/chisla-int-float-complex.html
+https://pythonworld.ru/tipy-dannyx-v-python/stroki-funkcii-i-metody-strok.html
+https://metanit.com/python/tutorial/5.2.php
 Каждый объект имеет свои собственные методы, которые можно назвать функциями, привязанными к конкретному объекту.
 Эти методы вызываются через символ . после имени объекта, и имеют доступ к внутреннему состоянию этого объекта.
 """

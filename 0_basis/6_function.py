@@ -1,4 +1,7 @@
 # learning python, 5th edition, chapter 16
+# https://docs.python.org/3/reference/simple_stmts.html#the-nonlocal-statement
+# https://docs.python.org/3/reference/simple_stmts.html#the-global-statement
+# https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 
 
 def func_1(elem: int) -> int:
@@ -43,11 +46,26 @@ def ff_all(*args, **kwargs):
 
 
 my_elem = 0
+my_list = []
 
 
 def global_var_func():
+    # глобальные переменные
     global my_elem
     my_elem = 4
+    my_list.append(12)
+
+
+def nonlocal_var_func():
+    # нелокальные переменные и замыкания
+    my_var = 1
+
+    def inner_func():
+        nonlocal my_var
+        print(my_var)
+        my_var = 22
+
+    return inner_func
 
 
 if __name__ == "__main__":
@@ -57,3 +75,7 @@ if __name__ == "__main__":
     ff_all(1, 2, 3, 4, aza=123)
     global_var_func()
     print(my_elem)
+    print(my_list)
+    f = nonlocal_var_func()
+    f()
+    f()
