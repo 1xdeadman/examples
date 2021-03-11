@@ -7,12 +7,12 @@
 # https://docs.python.org/3/reference/simple_stmts.html#the-nonlocal-statement
 # https://docs.python.org/3/reference/simple_stmts.html#the-global-statement
 # https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
+# https://docs.python.org/3/library/typing.html
 # https://pythonworld.ru/tipy-dannyx-v-python/vse-o-funkciyax-i-ix-argumentax.html
 
-
 def func_1(elem: int) -> int:
-    print('func_name()1')
-    return "as"
+    print('func_name()')
+    return 123
 
 
 def func_2(param_1: int, param_2=123):
