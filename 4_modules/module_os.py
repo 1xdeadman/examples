@@ -45,22 +45,22 @@ def get_filesystem_info():
 
 def path_info_func():
     print("abspath:", os.path.abspath("."))
-    print("basename:", os.path.basename("E:/projects/AuthServer/AuthServer/bin/Release/netcoreapp3.1/AuthServer.dll"))
-    print("dirname:", os.path.dirname("E:\\projects\\"))
-    print("commonpath:", os.path.commonpath(["E:/projects/AuthServer", "E:\\projects\\CDO", "E:/projects/MarkerInfrastructure"]))
-    print("commonprefix:", os.path.commonprefix(["E:/projects/AuthServer", "E:/projects\\CDO", "E:/projects/MarkerInfrastructure"]))
-    print("getatime:", os.path.getatime("E:\\projects\\dnstwist\\dnstwist.py"))
-    print("getmtime:", os.path.getmtime("E:\\projects\\dnstwist\\dnstwist.py"))
-    print("getctime:", os.path.getctime("E:\\projects\\dnstwist\\dnstwist.py"))
-    print("getsize:", os.path.getsize("E:\\projects\\dnstwist\\dnstwist.py"))  # bytes
-    print("isabs:", os.path.isabs("E:\\projects\\dnstwist\\dnstwist.py"))
+    print("basename:", os.path.basename("D:/projects/AuthServer/AuthServer/bin/Release/netcoreapp3.1/AuthServer.dll"))
+    print("dirname:", os.path.dirname("D:\\projects\\"))
+    print("commonpath:", os.path.commonpath(["D:/projects/AuthServer", "D:\\projects\\CDO", "D:/projects/MarkerInfrastructure"]))
+    print("commonprefix:", os.path.commonprefix(["E:/projects/AuthServer", "D:/projects\\CDO", "D:/projects/MarkerInfrastructure"]))
+    print("getatime:", os.path.getatime(r"D:\projects\studies\statistics\data.txt"))
+    print("getmtime:", os.path.getmtime(r"D:\projects\studies\statistics\data.txt"))
+    print("getctime:", os.path.getctime(r"D:\projects\studies\statistics\data.txt"))
+    print("getsize:", os.path.getsize(r"D:\projects\studies\statistics\data.txt"))  # bytes
+    print("isabs:", os.path.isabs(r"D:\projects\studies\statistics\data.txt"))
     print("join:", os.path.join("asd", "sad", "qwe"))
-    print("normcase:", os.path.normcase("E://projects//AuthServer"))
-    print("normpath:", os.path.normpath("E://projects//AuthServer"))
-    print("samefile:", os.path.samefile("E:/projects/AuthServer", "E:/projects/AuthServer"))
-    print("split:", os.path.split("E:/projects/AuthServer"))
-    print("splitdrive:", os.path.splitdrive("E:/projects/AuthServer"))
-    print("splitext:", os.path.splitext("E:\\projects\\dnstwist\\dnstwist.py"))
+    print("normcase:", os.path.normcase("D://projects//web//AuthServer"))
+    print("normpath:", os.path.normpath("D://projects//web//AuthServer"))
+    print("samefile:", os.path.samefile("D:/projects/web/AuthServer", "D:/projects/web/AuthServer"))
+    print("split:", os.path.split("D:/projects/web/AuthServer"))
+    print("splitdrive:", os.path.splitdrive("D:/projects/web/AuthServer"))
+    print("splitext:", os.path.splitext(r"D:\projects\studies\statistics\data.txt"))
 
 
 def work_with_filesystem():
@@ -110,5 +110,5 @@ def work_with_filesystem():
 # fylesystem_spec_symbols()
 # work_with_environment()
 # get_filesystem_info()
-# path_info_func()
+path_info_func()
 # work_with_filesystem()
