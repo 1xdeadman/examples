@@ -12,12 +12,17 @@ filename = "TestData/shelve/db.shelve"
 
 key = 'key'
 d = shelve.open(filename)  # writeback=True
+
 d[key] = 123
 data = d[key]
+
 print("data:", data)
+
 del d[key]
+
 print(d.get(key))
 flag = key in d
+
 print(list(d.keys()))
 
 d['xx'] = [0, 1, 2]
