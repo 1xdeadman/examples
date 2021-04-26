@@ -3,19 +3,33 @@
 # https://docs.python.org/3/library/asyncio-api-index.html
 import asyncio
 import time
+import threading
+import os
+
+
+def func(x: asyncio.Task):
+    print(f"endddd::{x}")
+
+
+def get_info():
+    print("proc:", os.getpid(), " || thread:", threading.get_ident())
 
 
 async def say_after(delay, what):
-    print(f'before {what}')
+    print(f'start {what}')
+    get_info()
     await asyncio.sleep(delay)
-    print(f'after {what}')
+    print(f'end {what}')
 
 
 async def main():
     print(f"started at {time.strftime('%X')}")
+    get_info()
 
-    task1 = asyncio.create_task(say_after(1, 'hello'))
-    task2 = asyncio.create_task(say_after(2, 'world'))
+    task1 = asyncio.create_task(say_after(1, 'hello'), name="TASK 1")
+    task2 = asyncio.create_task(say_after(2, 'world'), name="TASK 2")
+
+    task1.add_done_callback(func)
 
     print('before main')
     # time.sleep(5)
@@ -32,5 +46,3 @@ async def main():
 
 
 asyncio.run(main())
-
-

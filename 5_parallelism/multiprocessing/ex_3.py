@@ -1,11 +1,10 @@
-# https://docs.python.org/3/library/threading.html
+# https://docs.python.org/3/library/multiprocessing.html
 
 import multiprocessing as mp
 import time
 
 
 def wait_condition(cv, flag):
-    lambda x, y: x + y
     with cv:
         print("wait!!")
         cv.wait_for(predicate=lambda: flag.value)

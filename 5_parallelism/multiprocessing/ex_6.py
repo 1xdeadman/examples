@@ -32,23 +32,27 @@ if __name__ == '__main__':
 
         # start async single task
         # use callback and errorcallback
-        '''async_res1 = my_pool.apply_async(proc_func, args=(1,), callback=res_callback)
+        '''
+        async_res1 = my_pool.apply_async(proc_func, args=(1,), callback=res_callback)
         async_res2 = my_pool.apply_async(proc_func, args=(2,), callback=res_callback)
         async_res3 = my_pool.apply_async(proc_func, args=(3,), callback=res_callback)
         print("main!")
         async_res1.wait()  # [timeout]
         async_res2.wait()
         async_res3.wait()
+        print("async_res:", async_res1.get())  # [timeout]
         '''
-        # print("async_res:", async_res1.get())  # [timeout]
 
+        '''
         # start few tasks
-        # print(my_pool.map(proc_func, iterable=[1, 2, 3]))
-        # async_res = my_pool.map_async(
-        #     proc_func,
-        #     iterable=[1, 2, 3],
-        #     callback=res_callback)
-        # async_res.wait()
+        res = my_pool.map(proc_func, iterable=[1, 2, 3])
+        print(res)
+        async_res = my_pool.map_async(
+            proc_func,
+            iterable=[(1, 2), (2, 3), (3, 4)],
+            callback=res_callback)
+        async_res.wait()
+        '''
         # start tasks with few params
         async_res = my_pool.starmap_async(
             proc_func,

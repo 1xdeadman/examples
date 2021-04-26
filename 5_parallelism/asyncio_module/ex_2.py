@@ -10,8 +10,8 @@ async def my_checker():
     for i in range(5):
         await asyncio.sleep(0.5)
         print("all_tasks:", len(asyncio.all_tasks()))
-        # for task in asyncio.all_tasks():
-        #    print("--", task)
+        for task in asyncio.all_tasks():
+            print("--", task)
     return True
 
 
@@ -29,18 +29,17 @@ async def my_func(row):
 
 
 async def main():
+    print(f"started at {time.strftime('%X')}")
     task_checker = asyncio.create_task(my_checker())
     task1 = asyncio.create_task(my_func(""))
     task2 = asyncio.create_task(my_func(" "))
-
-    print(f"started at {time.strftime('%X')}")
 
     print("done1:", task1.done())
     print("done2:", task2.done())
     await asyncio.sleep(0.3)
     task2.cancel("azaza")
     await task1
-    await task_checker
+    # await task_checker
     print("cancelled1:", task1.cancelled())
     print("result1:", task1.result())
     try:

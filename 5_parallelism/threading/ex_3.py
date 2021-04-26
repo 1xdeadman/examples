@@ -4,38 +4,37 @@ import threading
 import time
 
 
+locker = threading.Lock()
 # condition vars
 cv = threading.Condition(lock=None)
 flag = False
 
 
 def is_flag():
-    global flag
     return flag
 
 
 def wait_condition():
-    global cv
     global flag
     print("Wait!!!")
     # cv.acquire()
     # cv.release()
     with cv:
-        # while not flag:
-        #     cv.wait()  # timeout
+        while not flag:
+            cv.wait()  # timeout
         # or
         cv.wait_for(predicate=is_flag)  # timeout
     print("YESYESYES!!!")
 
 
 def notify_condition():
-    global cv
     global flag
     with cv:
         time.sleep(2)
         flag = True
         print("notify!!")
-        cv.notify(2)
+        cv.notify(1)
+        cv.notify(1)
         # cv.notify_all()
 
 

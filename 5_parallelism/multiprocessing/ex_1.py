@@ -44,4 +44,6 @@ if __name__ == '__main__':
     print(new_process.is_alive())
     print(new_process.pid)
     new_process.terminate()
+    new_process.kill()
+    new_process.close()
     print(f"{new_process.name} finished")

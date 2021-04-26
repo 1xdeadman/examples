@@ -4,12 +4,12 @@ import time
 
 
 def print_thread_name(name: str):
-    print(f"{name}:", thr.current_thread().getName())
+    print(f"{name}: {thr.current_thread().getName()}: {thr.get_ident()}")
 
 
 def task():
-    print_thread_name("sync")
-    return "sync"
+    print_thread_name("thread")
+    return "thread"
 
 
 async def async_task():
@@ -25,11 +25,11 @@ async def main():
     )
 
     print("res:", res)
-
-    fut = asyncio.to_thread(task)
-    print(fut)
-    res = await fut
-    print("res:", res)
+    #
+    # fut = asyncio.to_thread(task)
+    # print(fut)
+    # thread_res = await fut
+    # print("res:", thread_res)
 
 
 asyncio.run(main())

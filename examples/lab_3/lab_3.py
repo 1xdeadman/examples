@@ -116,6 +116,5 @@ class ReplaceEncrypt(MyAbstractClass):
         pass
 
 
-obj_base = MyAbstractClass()
 obj_rep = ReplaceEncrypt()
 obj_gam = GammEncrypt()

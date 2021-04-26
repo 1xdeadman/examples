@@ -27,7 +27,7 @@ def proc_func(my_queue: mp.Queue):
 
 
 if __name__ == '__main__':
-    my_queue = mp.Queue(maxsize=30)
+    my_queue = mp.Queue(maxsize=32)
     prod_1 = mp.Process(
         target=proc_func,
         name="prod 1",
@@ -43,17 +43,14 @@ if __name__ == '__main__':
     closed_count = 0
     while my_queue:
         try:
-            if not my_queue.empty():
-                text = my_queue.get(block=False, timeout=0.1)
+            text = my_queue.get(block=False, timeout=0.1)
+            if type(text) is str and len(text) > 0:
                 print(text)  # [block[, timeout]]
                 if text == "CLOSED!":
                     closed_count += 1
                 if closed_count == 2:
                     print('END')
                     break
-            else:
-                time.sleep(1)
-                print('--:')
         except Exception as ex:
             print(ex)
     prod_1.join()
