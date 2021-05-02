@@ -1,6 +1,6 @@
 import sys
-from PySide2.QtWidgets import QApplication, QPushButton
-from PySide2.QtCore import QObject, Signal, Slot
+from PySide6.QtWidgets import QApplication, QPushButton
+from PySide6.QtCore import QObject, Signal, Slot
 
 app = QApplication(sys.argv)
 
