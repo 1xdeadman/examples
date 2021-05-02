@@ -1,14 +1,16 @@
 # https://doc.qt.io/qt-5/signalsandslots.html
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QToolTip.html
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QPushButton.html
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QMessageBox.html
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QMenu.html
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QAction.html
+# https://wiki.qt.io/Qt_for_Python_Signals_and_Slots
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/index.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QToolTip.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QPushButton.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QMessageBox.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QMenu.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QAction.html
 
 import sys
 import time
-from PySide2.QtWidgets import (QApplication, QWidget, QToolTip, QPushButton, QMessageBox, QMenu, QAction)
-from PySide2.QtGui import QFont
+from PySide6.QtWidgets import (QApplication, QWidget, QToolTip, QPushButton, QMessageBox, QMenu)
+from PySide6.QtGui import QFont, QAction
 
 
 class Example_2(QWidget):
@@ -32,9 +34,9 @@ class Example_2(QWidget):
             self,
             'Message',
             "Are you sure to quit?",
-            QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel,
+            QMessageBox.Yes | QMessageBox.Yes | QMessageBox.Cancel,
             QMessageBox.Yes)
-        
+
         '''
         mesg_bx = QMessageBox(self)
         mesg_bx.setWindowTitle("title")
@@ -44,14 +46,6 @@ class Example_2(QWidget):
         mesg_bx.addButton(QMessageBox.Cancel)
         mesg_bx.setDefaultButton(QMessageBox.Yes)
         reply = mesg_bx.exec()
-        '''
-        '''
-        about(QWidget *parent, const QString &title, const QString &text)
-        aboutQt(QWidget *parent, const QString &title = QString())
-        critical(QWidget *parent, const QString &title, const QString &text, QMessageBox::StandardButtons buttons = Ok, QMessageBox::StandardButton defaultButton = NoButton)
-        information(QWidget *parent, const QString &title, const QString &text, QMessageBox::StandardButtons buttons = Ok, QMessageBox::StandardButton defaultButton = NoButton)
-        question(QWidget *parent, const QString &title, const QString &text, QMessageBox::StandardButtons buttons = StandardButtons(Yes | No), QMessageBox::StandardButton defaultButton = NoButton)
-        warning(QWidget *parent, const QString &title, const QString &text, QMessageBox::StandardButtons buttons = Ok, QMessageBox::StandardButton defaultButton = NoButton)
         '''
 
         btn_text = ""
@@ -105,7 +99,7 @@ class Example_2(QWidget):
         menu.addAction(self.new_action('2'))
 
         sleep_btn.setMenu(menu)
-        sleep_btn.clicked.connect(self.show_question_message_box)
+        # sleep_btn.clicked.connect(self.show_question_message_box)
 
     def new_action(self, name: str, tip: str="", shortcut: str='Ctrl+Q'):
         action = QAction(name, self)

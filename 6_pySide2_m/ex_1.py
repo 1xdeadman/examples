@@ -3,25 +3,20 @@
 # https://www.qt.io/
 # https://www.qt.io/download
 # https://doc.qt.io/qtforpython/
+# https://doc.qt.io/qtforpython/tutorials/index.html
 # https://doc.qt.io/qtforpython/contents.html
-# https://doc.qt.io/qtforpython/api.html#basic-modules
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QWidget.html
-
+# https://doc.qt.io/qtforpython/api.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QWidget.html
 
 # pip install PySide2
-import os
 import sys
-import  PySide2.QtCore
-from  PySide2.QtWidgets import QApplication, QWidget
+import  PySide6.QtCore
+from  PySide6.QtWidgets import QApplication, QWidget
 
-# Prints PySide2 version
-# e.g. 5.11.1a1
-print(PySide2.__version__)
+print(PySide6.__version__)
 
 if __name__ == '__main__':
 
-    del os.environ["QT_DEVICE_PIXEL_RATIO"]
-    os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     app = QApplication(sys.argv)
 
     w = QWidget()

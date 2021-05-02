@@ -3,7 +3,7 @@
 # https://doc.qt.io/qt-5/qrect.html
 # https://doc.qt.io/qt-5/qwidget.html#frameGeometry-prop
 import sys
-from PySide2.QtWidgets import QWidget, QDesktopWidget, QApplication
+from PySide6.QtWidgets import QWidget, QDesktopWidget, QApplication
 
 
 class Example(QWidget):

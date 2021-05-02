@@ -1,16 +1,14 @@
 # https://doc.qt.io/qt-5/qlcdnumber.html
 # https://doc.qt.io/qt-5/qslider.html
 # https://doc.qt.io/qt-5/qvboxlayout.html
-# https://doc.qt.io/qtforpython/PySide2/QtCore/QObject.html#PySide2.QtCore.PySide2.QtCore.QObject.findChild
+# https://doc.qt.io/qtforpython/PySide6/QtCore/QObject.html
 # https://doc.qt.io/qtforpython/overviews/layout.html
 import sys
-from PySide2.QtCore import Qt
-from PySide2.QtWidgets import ( QApplication, QWidget, QRadioButton, QLCDNumber, QSlider, QVBoxLayout)
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import ( QApplication, QWidget, QRadioButton, QLCDNumber, QSlider, QVBoxLayout)
 
 
 class Example(QWidget):
-
-
 
     def __init__(self):
         super().__init__()

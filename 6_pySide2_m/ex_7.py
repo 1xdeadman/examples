@@ -1,12 +1,12 @@
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QLabel.html
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QFormLayout.html
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QLineEdit.html
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QTextEdit.html
-# https://doc.qt.io/qtforpython/PySide2/QtWidgets/QInputDialog.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QLabel.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QFormLayout.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QLineEdit.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QTextEdit.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QInputDialog.html
 
 import sys
 
-from PySide2.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QFormLayout, QLineEdit, QTextEdit, QInputDialog
+from PySide6.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QFormLayout, QLineEdit, QTextEdit, QInputDialog
 
 
 class MyWidget(QWidget):

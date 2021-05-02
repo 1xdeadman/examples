@@ -1,7 +1,8 @@
 # https://pythonworld.ru/gui/pyqt5-menustoolbars.html
+# https://doc.qt.io/qtforpython/PySide6/QtWidgets/QMainWindow.html
 
 import sys
-from PySide2.QtWidgets import QMainWindow, QApplication, QPushButton
+from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton
 
 
 class Example(QMainWindow):

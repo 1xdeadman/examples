@@ -1,8 +1,8 @@
 # https://doc.qt.io/qt-5/qicon.html
 
 import sys
-from PySide2.QtWidgets import QMainWindow, QAction, QApplication, QMessageBox
-from PySide2.QtGui import QIcon
+from PySide6.QtWidgets import QMainWindow, QApplication, QMessageBox
+from PySide6.QtGui import QIcon, QAction
 
 
 class Example(QMainWindow):
