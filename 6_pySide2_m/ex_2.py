@@ -34,7 +34,7 @@ class Example_2(QWidget):
             self,
             'Message',
             "Are you sure to quit?",
-            QMessageBox.Yes | QMessageBox.Yes | QMessageBox.Cancel,
+            QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel,
             QMessageBox.Yes)
 
         '''
