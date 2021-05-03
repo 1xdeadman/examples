@@ -3,6 +3,7 @@
 # https://tproger.ru/translations/demystifying-decorators-in-python/
 # https://habr.com/ru/post/141411/
 import time
+from functools import wraps, update_wrapper
 
 
 class cls_decorator:
@@ -18,6 +19,7 @@ class cls_decorator:
 
 
 def my_decorator(func):
+    @wraps(func)
     def wrapper(*args, **kwargs):
         start = time.time()
         res = func(*args, **kwargs)
@@ -39,10 +41,11 @@ def my_func(kek, lol):
 my_func(11, 22)
 my_func(11, 33)
 
-'''
+
 class csl_dec(object):
     @classmethod
     def my_dec(cls, decorated):
+        @wraps(decorated)
         def wrapper(*args, **kwargs):
             start = time.time()
             print("before:")
@@ -63,8 +66,10 @@ class kek:
 @csl_dec.my_dec
 def ff(kek, lol):
     print("my_func():", kek, lol)
-ff(1,2)
-# kk = kek()
-# kk.keko()
-# kk.keko()
-'''
+
+
+ff(1, 2)
+
+kk = kek()
+kk.keko()
+kk.keko()
