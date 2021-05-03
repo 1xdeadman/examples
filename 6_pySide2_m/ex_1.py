@@ -8,10 +8,10 @@
 # https://doc.qt.io/qtforpython/api.html
 # https://doc.qt.io/qtforpython/PySide6/QtWidgets/QWidget.html
 
-# pip install PySide2
+# pip install PySide6
 import sys
-import  PySide6.QtCore
-from  PySide6.QtWidgets import QApplication, QWidget
+import PySide6.QtCore
+from PySide6.QtWidgets import QApplication, QWidget
 
 print(PySide6.__version__)
 
