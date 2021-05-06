@@ -34,7 +34,7 @@ def use_command(command: str) -> None:
     global commands
     for com in commands:
         if command in com:
-            typing.Callable[com[2]]()
+            com[2]()
             return
     print("Не найдена команда!")
 
