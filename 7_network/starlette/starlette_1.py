@@ -2,6 +2,7 @@
 # оф. документация: https://www.starlette.io/
 # оф репозиторий проекта: https://github.com/encode/starlette
 # информация об ассинхронных серверах: https://habr.com/ru/post/482936/
+# https://medium.com/analytics-vidhya/difference-between-wsgi-and-asgi-807158ed1d4c
 # https://asgi.readthedocs.io/en/latest/
 # https://www.uvicorn.org/
 # Django

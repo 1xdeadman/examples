@@ -1,0 +1,17 @@
+Для полноценного запуска flask приложений требуется установка wsgi сервера.
+Подробнее про них: https://flask.palletsprojects.com/en/1.1.x/deploying/wsgi-standalone/.
+Существует несколько реализаций, остановимся на нескольких из них:
+1. gunicorn - основной сервер. Работает ТОЛЬКО на linux. Для запуска следует:
+    1.1 установить gunicorn с помощью команды (https://docs.gunicorn.org/en/latest/install.html):
+            pip install gunicorn
+    1.2 Выполнить команду:
+            gunicorn <ФАЙЛ ПРИЛОЖЕНИЯ>:<ЭКЗЕМПЛЯР FLASK>
+2. Gevent - сервер, основанный на корутинах ()http://www.gevent.org. Работает на linux, macOS и на windows. Для запуска требуется:
+    1.1 установить Gevent с помощью команды (http://www.gevent.org/install.html):
+             pip install gevent
+    1.2 Создать скрипт (https://flask.palletsprojects.com/en/1.1.x/deploying/wsgi-standalone/#gevent):
+            from gevent.pywsgi import WSGIServer
+            from yourapplication import app
+            http_server = WSGIServer(('', 5000), app)
+            http_server.serve_forever()
+    1.3 Запустить созданный скрипт
