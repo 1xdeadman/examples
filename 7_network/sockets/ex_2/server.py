@@ -5,8 +5,8 @@ PORT = 50007
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
     s.listen(1)
-    s.settimeout(5.0)
-    # s.setblocking(False)
+    s.settimeout(5.0)  # 0 to non-blocking mode
+    # s.setblocking(True)
     # s.setblocking(False)
     conn, addr = s.accept()
     with conn:

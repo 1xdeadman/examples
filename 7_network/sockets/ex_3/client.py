@@ -7,7 +7,7 @@ PORT = 6666
 
 
 if len(sys.argv) == 1:
-    print('need more minerals!!')
+    print('need more args')
     exit(0)
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))

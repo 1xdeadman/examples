@@ -17,5 +17,6 @@ for _ in range(2):
         print(sock.recv(2).decode(encoding='utf-8'))
         print(sock.recv(2).decode(encoding='utf-8'))
         sock.sendall(b"okay")
-
+# sock.close()
+# or
 # sock.shutdown(socket.SHUT_RDWR)
