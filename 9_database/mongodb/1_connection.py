@@ -5,7 +5,7 @@ print(client)
 
 db = client['test_db']
 print(db)
-
+collection = db['col_name']
 db.create_collection('create_coll')
 print(db.list_collection_names())
 db.drop_collection('create_coll')

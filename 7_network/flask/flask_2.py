@@ -2,16 +2,17 @@
 # gunicorn - https://docs.gunicorn.org/en/latest/design.html
 
 from flask import Flask, url_for
-from flask import jsonify, request, Request
+from flask import jsonify, request, Request, Response
 from markupsafe import escape
 
 app = Flask(__name__)
 
 
 def helper(value):
-    return jsonify({
+    res: Response = jsonify({
         "res": value + value
     })
+    return res
 
 
 # указывает параметры строки url
@@ -36,12 +37,13 @@ def test_var_str(value):
 # methods указывает тип запроса, который обрабатывается данной функцией
 @app.route('/', methods=['GET', 'POST'])
 def test():
+    print(request.method)
     return jsonify({
-        "res": "welcome home, the samurai"
+        "res": "welcome home, the samurai!"
     })
 
 
 if __name__ == '__main__':
     # запустить веб приложение в тестовом режиме.
     # https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.run
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

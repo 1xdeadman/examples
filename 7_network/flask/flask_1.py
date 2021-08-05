@@ -1,8 +1,16 @@
 # flask - https://flask.palletsprojects.com/
+# # инфа про http: https://developer.mozilla.org/ru/docs/Web/HTTP/Overview
 # gunicorn - https://docs.gunicorn.org/en/latest/design.html
 
+
+# Django
+# Flask
+# AioHTTP
+# Sanic
+# Tornado
+# starlette
+
 from flask import Flask
-from flask import jsonify
 
 
 # экземпляр приложения
@@ -16,9 +24,10 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     # возвращаем ответ в формате json
-    return jsonify({
-        "res": "welcome home, the samurai"
-    })
+    return {
+        "res": "welcome home, the samurai!"
+    }
+
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

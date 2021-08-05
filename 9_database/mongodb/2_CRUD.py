@@ -1,9 +1,9 @@
 import pymongo
+from bson import ObjectId
 
 client = pymongo.MongoClient()
 
-db = client['test_db']
-collection = db['ex_2']
+collection = client['test_db']['ex_2']
 
 data = [
     {
@@ -48,7 +48,7 @@ def find_one():
 
 def find_all():
     print("\nfind_all:")
-
+    res = collection.find(filter={}, skip=1, limit=5)
     for data in collection.find(filter={}, skip=1, limit=5):
         print('---', data)
     # for data in collection.find(filter={}):
